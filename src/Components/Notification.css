@@ -1,0 +1,12 @@
+.noti-title {
+    color: black;
+    text-align: center;
+}
+.notification-card{
+    border: 2px solid rgb(39, 8, 69);
+    background-color: rgb(220, 209, 234);
+    padding: 0px 50px;
+}
+.notification-card h3{
+    color: black;
+}

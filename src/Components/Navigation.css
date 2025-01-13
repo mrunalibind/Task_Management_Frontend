@@ -1,0 +1,29 @@
+/* Navigation.css */
+.nav-block {
+  /* width: 100vw; */
+  background-color: rgb(78, 7, 106);
+}
+.navigation-bar {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 10px;
+  align-items: center;
+}
+.nav-links {
+  list-style: none;
+  color: white;
+  width: 30%;
+  /* border: 1px solid pink; */
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo h2 {
+  color: white;
+}
+.nav-links a {
+  color: white;
+}

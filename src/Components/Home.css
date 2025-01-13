@@ -1,0 +1,54 @@
+p {
+    color: black;
+}
+p button {
+    background-color: rgb(82, 4, 106);
+}
+.form-box {
+    
+
+}
+.user-form {
+    width: 40%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: rgb(155, 132, 185);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.user-form p {
+    text-align: center;
+}
+.form-block {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+.msg {
+    text-align: center;
+    color: black;
+}
+input {
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    background-color: rgb(244, 239, 244);
+    color: black;
+    /* border: none; */
+    outline: none;
+}
+.click-btn {
+    background-color: rgb(78, 7, 106);  
+    padding: 10px 20px;
+    width: 40%;
+    border: none;
+    align-self: center;
+    color: white;
+    border-radius: 10px;
+}
+.click-btn:hover {
+    cursor: pointer;
+
+    background-color: rgb(124, 30, 161);
+}
