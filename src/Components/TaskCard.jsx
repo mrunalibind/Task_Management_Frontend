@@ -8,9 +8,14 @@ const TaskCard = ({prop, fetchTasks, loggedInUserId, onEdit}) => {
     const isOwnTask = userId === loggedInUserId;
     const handleComplete = async () => {
         try {
-            const response = await fetch(`http://localhost:6080/task/removeTask?taskID=${_id}`, {
+            let token = localStorage.getItem('token');
+            const response = await fetch(`https://task-management-backend-xz3t.onrender.com/task/removeTask?taskID=${_id}`, {
                 method: 'DELETE',
                 credentials: 'include', // To include cookies with the request
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}` // Pass token here
+                },
             });
 
             const data = await response.json();

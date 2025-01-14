@@ -12,10 +12,12 @@ const EditModel = ({task, onClose, fetchTasks}) => {
     }
     const handleSubmit = async() => {
         try {
-            const response = await fetch(`http://localhost:6080/task/updateTask?taskID=${task._id}`, {
+            let token = localStorage.getItem('token');
+            const response = await fetch(`https://task-management-backend-xz3t.onrender.com/task/updateTask?taskID=${task._id}`, {
                 method: 'PATCH',
                 headers: {
-                  'Content-Type': 'application/json'
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${token}` // Pass token here
                 },
                 body: JSON.stringify(formData),
                 credentials: 'include',

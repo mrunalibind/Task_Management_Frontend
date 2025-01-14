@@ -14,9 +14,15 @@ const Task = () => {
   const fetchTasks = async (currentPage) => {
     
     try {
-      const response = await fetch(`http://localhost:6080/task/retrieveTask?page=${currentPage}&perPage=10`, {
+      let token = localStorage.getItem('token');
+      
+      const response = await fetch(`https://task-management-backend-xz3t.onrender.com/task/retrieveTask?page=${currentPage}&perPage=10`, {
         method: 'GET',
         credentials: 'include', // Include cookies
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}` // Pass token here
+        },
       });
       
       if (response.ok) {

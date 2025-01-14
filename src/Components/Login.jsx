@@ -17,8 +17,8 @@ const Login = ({ onLogin }) => {
 
         const handleSubmit = async (userData) => {
             try {
-                console.log(userData);
-                const response = await fetch('http://localhost:6080/user/login', {
+                // console.log(userData);
+                const response = await fetch('https://task-management-backend-xz3t.onrender.com/user/login', {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json'
@@ -34,6 +34,7 @@ const Login = ({ onLogin }) => {
                         password: ""
                     });
                     localStorage.setItem('userID', errorData.userID);
+                    localStorage.setItem('token', errorData.token);
                     onLogin();
                     navigate('/tasks')
                 }

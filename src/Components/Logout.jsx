@@ -7,10 +7,15 @@ const Logout = ({  setIsLoggedIn }) => {
     useEffect(() => {
         const handleLogout = async () => {
             try {
+                let token = localStorage.getItem('token');
                 // Optionally, you can make an API call to log the user out server-side
-                const response = await fetch("http://localhost:6080/user/logout", {
+                const response = await fetch("https://task-management-backend-xz3t.onrender.com/user/logout", {
                     method: "PATCH",
                     credentials: "include", // Include cookies to ensure session is cleared
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}` // Pass token here
+                    },
                 });
 
                 if (response.ok) {

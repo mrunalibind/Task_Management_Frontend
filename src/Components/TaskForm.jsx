@@ -13,15 +13,18 @@ const TaskForm = ({fetchTasks}) => {
 
     const handleSubmit = async (taskData) => {
         try {
-            const response = await fetch('http://localhost:6080/task/createTask', {
+            let token = localStorage.getItem('token');
+            const response = await fetch('https://task-management-backend-xz3t.onrender.com/task/createTask', {
                 method: 'POST',
                 headers: {
-                  'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}` // Pass token here
                 },
                 body: JSON.stringify(taskData),
                 credentials: 'include',
             });
             const errorData = await response.json(); // Parse the error message
+            console.log(errorData);
             setSuccessMsg(errorData.msg);
             if(response.ok) {
                 setFormData({

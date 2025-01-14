@@ -18,7 +18,7 @@ const Register = () => {
     const handleSubmit = async (userData) => {
         try {
             console.log(userData);
-            const response = await fetch('http://localhost:6080/user/register', {
+            const response = await fetch('https://task-management-backend-xz3t.onrender.com/user/register', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'

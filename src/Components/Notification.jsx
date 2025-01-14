@@ -9,10 +9,14 @@ const Notification = () => {
   console.log("Notification Componenet")
   const fetchNotifications = async () => {
     try {
-
-      const response = await fetch("http://localhost:6080/notification/retrieveNotification", {
+      let token = localStorage.getItem('token');
+      const response = await fetch("https://task-management-backend-xz3t.onrender.com/notification/retrieveNotification", {
         method: 'GET',
         credentials: 'include', // Include cookies
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}` // Pass token here
+        },
       });
 
       let data = await response.json();
@@ -27,7 +31,7 @@ const Notification = () => {
     fetchNotifications();
 
     // Optional: Add WebSocket to listen for new notifications in real-time
-    const socket = io("http://localhost:6080");
+    const socket = io("https://task-management-backend-xz3t.onrender.com");
     
     socket.on("newNotification", (notification) => {
       console.log(notification, "noticompo");
